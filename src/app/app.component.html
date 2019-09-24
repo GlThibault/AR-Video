@@ -1,0 +1,48 @@
+<a-scene startButton embedded vr-mode-ui='enabled: false'
+	arjs='debugUIEnabled: false; sourceType: webcam'>
+	<a-assets>
+		<video class="videos" id="unicorn" src="assets/videos/unicorn.mp4" loop crossorigin="anonymous"></video>
+		<video class="videos" id="nyan-cat" src="assets/videos/nyan-cat.mp4" loop crossorigin="anonymous"></video>
+		<video class="videos" id="doge" src="assets/videos/doge.mp4" loop crossorigin="anonymous"></video>
+		<img id="flowers" src="assets/frame.png" />
+		<img id="streamer" src="assets/streamer.png" />
+		<img id="fb" src="assets/fb.png" />
+		<img id="instagram" src="assets/instagram.png" />
+	</a-assets>
+
+	<a-entity id="camera" look-controls cursor="rayOrigin: mouse;" raycaster="objects: .clickable;">
+	</a-entity>
+
+	<a-marker smooth="true" type='pattern' url='assets/patterns/pattern-unicorn.patt'>
+		<a-video class="clickable" vidhandler src="#unicorn" autoplay loop="true" rotation="90 180 0" width="1.3" height="1.3">
+		</a-video>
+		<a-entity gltf-model="url(assets/3d/candle/scene.gltf)" rotation="-90 0 0" animation-mixer
+			scale=".005 .005 .005" position="-0.6 0.2 0.6"></a-entity>
+		<a-entity gltf-model="url(assets/3d/butterfly/scene.gltf)" rotation="-90 0 0" animation-mixer
+			scale=".15 .15 .15" position="0.5 0.2 -0.5"></a-entity>
+	</a-marker>
+
+	<a-marker smooth="true" type='pattern' url='assets/patterns/pattern-nyan-cat.patt'>
+		<a-plane color="#7EC0EE" width="1.4" height="1.4" rotation="-90 0 0"></a-plane>
+		<a-video class="clickable" vidhandler src="#nyan-cat" autoplay loop="true" rotation="90 180 0" width="1.3" height="1.3"
+			position="0 0.1 0"></a-video>
+		<a-plane class="clickable" mylink="href: https://www.facebook.com/ARVideoApp/"
+			material="transparent: true; opacity: 0" height="0.8" width="0.8" rotation="-90 0 0" position="1 0 -1">
+		</a-plane>
+		<a-image src="#fb" rotation="-90 0 0" height="0.3" width="0.3" position="0.6 0.1 -1"></a-image>
+		<a-plane class="clickable" mylink="href: https://www.instagram.com/arvideo_app/"
+			material="transparent: true; opacity: 0" height="0.8" width="0.8" rotation="-90 0 0" position="2.2 0 -0.6">
+		</a-plane>
+		<a-image src="#instagram" rotation="-90 0 0" height="0.3" width="0.3" position="1 0.1 -0.6"></a-image>
+	</a-marker>
+	
+	<a-marker smooth="true" type='pattern' url='assets/patterns/pattern-doge.patt'>
+		<a-video class="clickable" vidhandler src="#doge" autoplay loop="true" rotation="90 180 0" width="1.3" height="1.3">
+		</a-video>
+		<a-image src="#flowers" rotation="-90 0 0" width="1.4" height="1.4" position="0 0.1 0"></a-image>
+	</a-marker>
+
+	<a-marker-camera>
+		<a-image src="#streamer" rotation="0 0 0" position="0 2.7 -8" width="2" height="0.5"></a-image>
+	</a-marker-camera>
+</a-scene>

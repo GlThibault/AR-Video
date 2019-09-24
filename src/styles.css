@@ -1,0 +1,33 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+a-scene {
+  width: 100%;
+  height: 100%;
+}
+
+.cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
+.mat-snack-bar-container,
+snack-bar-container {
+  background-color: #e94f7f;
+}
+
+.cdk-live-announcer-element.cdk-visually-hidden {
+  display: none !important;
+}
+
+.cdk-overlay-container {
+  position: absolute;
+}
+
+.mat-simple-snackbar {
+  color: white;
+}
